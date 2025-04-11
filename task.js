@@ -101,7 +101,7 @@ console.log(findIndex([1, 2, 3, 4, 5], 6));
 
 
 
-
+// Adashe function---- create a function that add a member to the list of members
 let members = [];
 
 function addMember(name, amount) {
