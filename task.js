@@ -1,9 +1,9 @@
+// create a palindrome strings
 function isPalindrome(str) {
     let cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
     let reversed = cleanStr.split('').reverse().join('');
     return cleanStr === reversed;
   }
-  
   console.log(isPalindrome("Racecar"));
   console.log(isPalindrome("madam"))
 
@@ -164,3 +164,5 @@ function removeMember(name) {
   }
 }
 removeMember("praise");
+
+
