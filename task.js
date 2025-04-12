@@ -1,12 +1,22 @@
 // create a palindrome strings
 function isPalindrome(str) {
-    let cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
-    let reversed = cleanStr.split('').reverse().join('');
-    return cleanStr === reversed;
-  }
-  console.log(isPalindrome("Racecar"));
-  console.log(isPalindrome("madam"))
+    let reversedStr = str.split('').reverse().join('');
+    return str === reversedStr;
+}
+console.log(isPalindrome("madam"));
 
+// or 
+
+function isPalindrome(str) {
+  for (let i = 0; i < str.length / 2; i++) {
+      if (str[i] !== str[str.length - 1 - i]) {
+          return false;
+      }
+  }
+  return true;
+}
+
+console.log(isPalindrome("madam"));
 
 //   return the largest number in an array of numbers
 
@@ -19,6 +29,15 @@ for (let i = 1; i < arr.length; i++) {
 }
 console.log(largest);
 
+// factoria of number
+ function calculateFactorial(num) {
+        let factorial = 1;
+        for (let i = 1; i <= num; i++) {
+            factorial *= i; 
+        }
+        console.log(factorial);
+    }
+    calculateFactorial(7);
 
 // sum of number in an arr 
 let array = [1, 2, 3, 4, 5];
@@ -29,6 +48,7 @@ for (let i = 0; i < array.length; i++) {
 console.log(sum);
 
 
+// return the vowel in a string
 function countVowels(string) {
     let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
     let count = 0;    
@@ -44,7 +64,7 @@ function countVowels(string) {
 }
 countVowels("God"); 
 
-
+// return the largest number in an array of numbers
 let numbers = [4, 10, 2, 99, 23];
 let max = numbers[0];
 function findLargestNumber(arr) {
