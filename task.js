@@ -1,13 +1,5 @@
 // create a palindrome strings
 function isPalindrome(str) {
-    let reversedStr = str.split('').reverse().join('');
-    return str === reversedStr;
-}
-console.log(isPalindrome("madam"));
-
-// or 
-
-function isPalindrome(str) {
   for (let i = 0; i < str.length / 2; i++) {
       if (str[i] !== str[str.length - 1 - i]) {
           return false;
@@ -15,7 +7,6 @@ function isPalindrome(str) {
   }
   return true;
 }
-
 console.log(isPalindrome("madam"));
 
 //   return the largest number in an array of numbers
@@ -59,7 +50,6 @@ function countVowels(string) {
             }
         }
     }
-
     console.log(count);
 }
 countVowels("God"); 
@@ -175,13 +165,19 @@ withdraw("praise", 100);
 
 // Removed member
 function removeMember(name) {
-  for (let i = 0; i < members.length; i++) {
+  let i = 0;
+  while (i < members.length) {
     if (members[i].name === name) {
-      members.splice(i, 1);
+      for (let j = i; j < members.length - 1; j++) {
+        members[j] = members[j + 1];
+      }
+      members.length--;
       console.log(`${name} has been removed.`);
-      break;
+      return;
     }
+    i++;
   }
+  console.log(`${name} not found.`);
 }
 removeMember("praise");
 
